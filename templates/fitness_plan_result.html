@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Fitness Plan Result</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background: linear-gradient(-45deg, #1e3c72, #2a5298, #0f2027, #203a43);
+            background-size: 400% 400%;
+            animation: gradientMove 10s ease infinite;
+            padding:40px;
+        }
+
+        @keyframes gradientMove {
+            0% {background-position:0% 50%;}
+            50% {background-position:100% 50%;}
+            100% {background-position:0% 50%;}
+        }
+
+        .container{
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(15px);
+            padding:40px;
+            border-radius:20px;
+            width:90%;
+            max-width:900px;
+            box-shadow:0 20px 50px rgba(0,0,0,0.4);
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from{
+                opacity:0;
+                transform: translateY(30px);
+            }
+            to{
+                opacity:1;
+                transform: translateY(0);
+            }
+        }
+
+        h1{
+            text-align:center;
+            color:#ffffff;
+            font-size:32px;
+            margin-bottom:30px;
+            letter-spacing:1px;
+        }
+
+        .result-content{
+            background:#ffffff;
+            padding:30px;
+            border-radius:15px;
+            color:#333;
+            line-height:1.7;
+            font-size:16px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.2);
+            animation: slideUp 1.5s ease;
+        }
+
+        @keyframes slideUp{
+            from{
+                opacity:0;
+                transform: translateY(50px);
+            }
+            to{
+                opacity:1;
+                transform: translateY(0);
+            }
+        }
+
+        .result-content h2,
+        .result-content h3{
+            color:#1e3c72;
+            margin-top:15px;
+        }
+
+        .result-content ul{
+            margin-left:20px;
+        }
+
+        @media(max-width:600px){
+            .container{
+                padding:20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>💪 Your AI Personalized Fitness Plan</h1>
+
+        <div class="result-content">
+            {{ans|safe}}
+        </div>
+    </div>
+
+</body>
+</html>
